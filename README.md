@@ -9,7 +9,7 @@ Highly inspired from: https://github.com/bckim92/zsh-autoswitch-conda
 
 Use the `link_conda_env` command to link a directory to a existing conda environment. Every time you step into this or sub directories the given environment gets activated.
 
-The `unlink_conda_env` is used to delete the link between the directory and the conda environment.
+The `unlink_conda_env` command is used to delete the link between the directory and the conda environment.
 
 ### Example
 
@@ -73,3 +73,4 @@ source ~/.zshrc
 
 - [ ] Fixes
 - [ ] Check before if existing link to environment
+- [ ] Add support for virtual envs
