@@ -74,7 +74,7 @@ This plugins needs `conda` to be installed.
 Clone this repository in oh-my-zsh's plugins directory:
 
 ```bash
-git clone https://github.com/se-jaeger/zsh-autoactivate-conda ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autoactivate-conda
+git clone https://github.com/se-jaeger/zsh-autoactivate-environment ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autoactivate-environment
 ```
 
 Activate the plugin in ~/.zshrc:
