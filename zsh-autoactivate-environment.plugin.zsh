@@ -73,19 +73,19 @@ function check_linked_env()
 
         IFS=';' read -r -A env_config <$linked_env_path
 
-        if [[ ${env_config[1]} == $CONDA_TYPE ]]; then
+        if [[ $env_config[1] == $CONDA_TYPE ]]; then
 
             # give environment name
-            _activate_conda_env ${env_config[2]}
+            _activate_conda_env $env_config[2]
 
-        elif [[ ${env_config[1]} == $VENV_TYPE ]]; then
+        elif [[ $env_config[1] == $VENV_TYPE ]]; then
         
             # give path to virtual env folder
-            _activate_virtual_env ${env_config[2]}
+            _activate_virtual_env $env_config[2]
 
         else
             printf "Received unknown environment name: "
-            printf ${env_config[1]}
+            printf $env_config[1]
             printf "\n"
 
             return # exit would close the current shell because plugins are sourced not executed ..
@@ -102,8 +102,8 @@ function link_environment()
 
         IFS=';' read -r -A env_config <$linked_env_path
 
-        printf "There is already a linked ${env_config[1]} environment. If this is a mistake use the unlink_environment command.\n"
-        printf "The linked environment is: ${env_config[2]}\n"
+        printf "There is already a linked $env_config[1] environment. If this is a mistake use the unlink_environment command.\n"
+        printf "The linked environment is: $env_config[2]\n"
 
         check_linked_env # keep the current environment active
 
