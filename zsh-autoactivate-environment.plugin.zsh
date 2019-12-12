@@ -51,7 +51,7 @@ function _deactivate_env()
     conda deactivate
 
     # deactivate virtual env if one is activated
-    if [[ -v VIRTUAL_ENV ]]; then
+    if [[ ! -z "$VIRTUAL_ENV" ]]; then
 
         deactivate
     fi  
