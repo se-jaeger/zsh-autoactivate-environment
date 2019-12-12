@@ -2,6 +2,8 @@ LINKED_ENV_FILE=".linked_env"
 CONDA_TYPE="conda"
 VENV_TYPE="virtualenv"
 
+unset ZSH_AUTOACTIVATE_MISSING_PREREQUISITES
+
 
 # Finds the path to the nearest .linked_env file
 # Returns empty string or the proper path to parent .linked_env
@@ -152,13 +154,13 @@ function unlink_environment()
 
 # check the requirements
 if ! type conda > /dev/null; then
-    export DISABLE_AUTOACTIVATE_ENVIRONMENT="1"
+    export ZSH_AUTOACTIVATE_MISSING_PREREQUISITES="1"
     echo "zsh-autoactivate-conda requires conda to be installed!\n"
     
     add-zsh-hook -D chpwd check_linked_env # Delete the function from the hook array
 fi
 
-if [[ -z "$DISABLE_AUTOACTIVATE_ENVIRONMENT" ]]; then
+if [[ -z "$DISABLE_AUTOACTIVATE_ENVIRONMENT" || -z "$ZSH_AUTOACTIVATE_MISSING_PREREQUISITES" ]]; then
     autoload -Uz add-zsh-hook
     add-zsh-hook -D chpwd check_linked_env
     add-zsh-hook chpwd check_linked_env
