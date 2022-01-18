@@ -1,3 +1,13 @@
+# Deprecated!
+
+I re-wrote this plugin: https://github.com/se-jaeger/zsh-activate-py-environment
+Would be great if you could check that out!
+
+
+
+
+
+
 # ZSH Autoactivate Environment Plugin
 
 This ZSH plugin switches the environment as you move between directories.
